@@ -1,0 +1,23 @@
+{
+  "name": "ofertiaqr",
+  "version": "1.0.0",
+  "description": "QR App for Ofertia's Hackathon",
+  "main": "js/main.js",
+  "dependencies": {
+    "cordova-plugin-qrscanner": "^2.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexMoncholi/ofertiaQR.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexMoncholi/ofertiaQR/issues"
+  },
+  "homepage": "https://github.com/AlexMoncholi/ofertiaQR#readme"
+}
