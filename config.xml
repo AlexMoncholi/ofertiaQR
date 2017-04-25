@@ -38,7 +38,6 @@
     <preference name="android-windowSoftInputMode" value="stateVisible|adjustResize" />
 
     <preference name="android-build-tool" value="gradle" />
-    <plugin name="com.phonegap.plugins.barcodescanner" spec="2.0.0" source="pgb" />
     <plugin name="cordova-plugin-statusbar" spec="~2.2.2" />
 
 </widget>
