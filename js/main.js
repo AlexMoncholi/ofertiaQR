@@ -88,7 +88,6 @@ function init(){
     setListeners();
     showLayer('main-qr');
 }
-
 init();
 var qrcode = new QRCode("qrcode", {
     width: 150,
