@@ -11,6 +11,8 @@
     <script src="js/qrcode.min.js"></script>
     <script src="js/html5-qrcode.js"></script>
     <script src="js/jsqrcode-combined.min.js"></script>
+    <script type="text/javascript" src="js/instascan.min.js"></script>
+
     <link rel="stylesheet" href="css/main.css">
 
     <!--[if lt IE 9]>
@@ -38,14 +40,23 @@
             <section id="main-qr">
                 <header>Bienvenido!</header>
                 <p>Welcome message</p>
-                <div id="reader" style="width:300px;height:250px; border: 1px solid #135db0">
-                </div>
-                <div data-role="main" class="ui-content">
-                    <p>
-                        <a target="_blank" href="javascript:scan();" style="text-decoration: none"><button>Scan</button></a>
-                        <a target="_blank" href="#display" style="text-decoration: none"><button>Display Scanned Data</button></a>
-                    </p>
-                </div>
+                <video id="preview"></video>
+    <script type="text/javascript">
+      let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
+      scanner.addListener('scan', function (content) {
+        console.log(content);
+      });
+      Instascan.Camera.getCameras().then(function (cameras) {
+        if (cameras.length > 0) {
+          scanner.start(cameras[0]);
+        } else {
+          console.error('No cameras found.');
+        }
+      }).catch(function (e) {
+        console.error(e);
+      });
+    </script>
+
             </section>
             <section id="create-qr">
                 <header>
