@@ -1,0 +1,101 @@
+@BlueBiru: #135db0;
+@DarkBiru: #194d92;
+@White: #fff;
+
+@import "reset.less";
+
+body {
+  & {
+    font-family: Roboto, 'Open Sans', sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+  }
+  > header {
+    display: block;
+    position: relative;
+  }
+}
+
+.app-header {
+  display: block;
+  width: 100%;
+  height: 60px;
+  background: @BlueBiru;
+  color: @White;
+}
+.app-menu-hamburguer {
+  & {
+    width: 19%;
+    height: 150px;
+    position: absolute;
+    left: 0;
+    transition: all .5s ease;
+  }
+  &.active {
+    background: @DarkBiru;
+  }
+  img {
+    width: 50%;
+    margin: 25%;
+  }
+}
+.app-title {
+  & {
+    width: 80%;
+    position: absolute;
+    left: 20%;
+  }
+  img {
+    margin: 15px 0 15px 11%;
+    width: 150px;
+  }
+}
+
+nav {
+  & {
+    background: @DarkBiru;
+    color: @White;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: -50%;
+    font-size: 16px;
+    transition: all .5s ease;
+  }
+  li {
+    padding: 20px 10px;
+    text-align: center;
+    border-bottom: 1px solid @White;
+  }
+}
+
+section {
+  text-align: center;
+  padding: 10%;
+  height: 100%;
+  display: none;
+}
+
+#qrcode {
+  img {
+    margin: .5em auto 1em;
+  }
+}
+
+.button{
+  border: 1px solid @DarkBiru;
+  background-color: @BlueBiru;
+  color: @White;
+  margin: 1em auto;
+  width: 50%;
+  padding: .5em;
+  border-radius: 5px;
+}
+
+#qr-text {
+  width: 80%;
+  border: 1px solid @BlueBiru;
+  font-size: 1em;
+  padding:.5em;
+}
