@@ -22,6 +22,7 @@
       <preference name="Fullscreen" value="false" />
       <preference name="Orientation" value="portrait" />
   </platform>
+    <plugin name="cordova-plugin-camera" spec="~2.4.0" />
 
   <icon src="img/icon.png" platform="android" />
 

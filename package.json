@@ -4,7 +4,8 @@
   "description": "QR App for Ofertia's Hackathon",
   "main": "js/main.js",
   "dependencies": {
-    "cordova-plugin-qrscanner": "^2.5.0"
+    "cordova-plugin-qrscanner": "^2.5.0",
+    "instascan": "^1.0.0"
   },
   "devDependencies": {},
   "scripts": {

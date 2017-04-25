@@ -11,7 +11,7 @@
     <script src="js/qrcode.min.js"></script>
     <script src="js/html5-qrcode.js"></script>
     <script src="js/jsqrcode-combined.min.js"></script>
-    <script type="text/javascript" src="js/instascan.min.js"></script>
+    
 
     <link rel="stylesheet" href="css/main.css">
 
@@ -40,23 +40,10 @@
             <section id="main-qr">
                 <header>Bienvenido!</header>
                 <p>Welcome message</p>
-                <video id="preview"></video>
-    <script type="text/javascript">
-      let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
-      scanner.addListener('scan', function (content) {
-        console.log(content);
-      });
-      Instascan.Camera.getCameras().then(function (cameras) {
-        if (cameras.length > 0) {
-          scanner.start(cameras[1]);
-        } else {
-          console.error('No cameras found.');
-        }
-      }).catch(function (e) {
-        console.error(e);
-      });
-    </script>
-
+                <button onclick="capturePhoto();">Capture Photo</button> <br>
+        <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
+                <div id="video"></div>
+                
             </section>
             <section id="create-qr">
                 <header>
@@ -79,5 +66,39 @@
         </main>
     </div>
     <script src="js/main.js"></script>
+    <script type="text/javascript" charset="utf-8">
+ 
+            var pictureSource,
+                destinationType
+             
+            document.addEventListener("deviceready",loaded,false);
+             
+            function loaded() {
+                pictureSource=navigator.camera.PictureSourceType;
+                destinationType=navigator.camera.DestinationType;
+            }
+             
+            function getPhoto(imageData) {
+                var smallImage = document.getElementById('smallImage');
+                 
+                 
+                smallImage.style.display = 'block';
+                 
+                 
+                smallImage.src = "data:image/jpeg;base64," + imageData;
+            }
+             
+            function capturePhoto() {
+                navigator.camera.getPicture(getPhoto, onFail, { quality: 50 });
+            }
+            
+             
+            function onFail(message) {
+                alert('Failed because: ' + message);
+            }
+             
+            </script>
+    
+
 </body>
 </html>
