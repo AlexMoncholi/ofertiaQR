@@ -7,7 +7,10 @@
     <title>Ofertia QR project</title>
     <meta name="description" content="Ofertia QR project">
     <meta name="author" content="Ofertia">
+    <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/qrcode.min.js"></script>
+    <script src="js/html5-qrcode.js"></script>
+    <script src="js/jsqrcode-combined.min.js"></script>
     <link rel="stylesheet" href="css/main.css">
 
     <!--[if lt IE 9]>
@@ -35,6 +38,8 @@
             <section id="main-qr">
                 <header>Bienvenido!</header>
                 <p>Welcome message</p>
+                <div id="reader" style="width:300px;height:250px">
+                </div>
                 <div data-role="main" class="ui-content">
                     <p>
                         <a target="_blank" href="javascript:scan();" style="text-decoration: none"><button>Scan</button></a>
