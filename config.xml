@@ -22,7 +22,11 @@
       <preference name="Fullscreen" value="false" />
       <preference name="Orientation" value="portrait" />
   </platform>
-    <plugin name="cordova-plugin-camera" spec="~2.4.0" />
+    <cocoon:plugin name="cordova-plugin-camera"/>
+    <cocoon:plugin name="cordova-plugin-media-capture"/>
+    <cocoon:plugin name="cordova-plugin-media"/>
+    <cocoon:plugin name="cordova-plugin-file"/>
+    <cocoon:plugin name="cordova-plugin-device"/>
 
   <icon src="img/icon.png" platform="android" />
 
