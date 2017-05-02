@@ -22,7 +22,7 @@
       <preference name="Fullscreen" value="false" />
       <preference name="Orientation" value="portrait" />
   </platform>
-
+    <gap:plugin name="org.apache.cordova.camera" />
   <icon src="img/icon.png" platform="android" />
 
   <access origin="*" />
