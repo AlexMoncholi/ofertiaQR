@@ -39,7 +39,7 @@
             <section id="main-qr">
                 <header>Bienvenido!</header>
                 <p>Welcome message</p>
-                <div id="qr-reader" style="width: 640px; height: 480px"></div>
+                <div id="qr-reader"></div>
                 
             </section>
             <section id="create-qr">
@@ -73,19 +73,19 @@
             inputStream : {
                 name : "Live",
                 type : "LiveStream",
-                target: document.querySelector('#qr-reader')    // Or '#yourElement' (optional)
-            },
-            constraints: {
-                width: 640,
-                height: 480,
-                facingMode: "environment",
-                deviceId: device.deviceId
-            },
-            area: { // defines rectangle of the detection/localization area
-                top: "0%",    // top offset
-                right: "0%",  // right offset
-                left: "0%",   // left offset
-                bottom: "0%"  // bottom offset
+                target: document.querySelector('#qr-reader'),    // Or '#yourElement' (optional)
+                constraints: {
+                    width: 640,
+                    height: 480,
+                    facingMode: "environment",
+                    deviceId: device.deviceId
+                },
+                area: { // defines rectangle of the detection/localization area
+                    top: "0%",    // top offset
+                    right: "0%",  // right offset
+                    left: "0%",   // left offset
+                    bottom: "0%"  // bottom offset
+                }
             },
             decoder : {
                 readers : ["code_128_reader"]
@@ -99,6 +99,7 @@
             console.log("Initialization finished. Ready to start");
             Quagga.start();
             cam = false;
+            Quagga.stop();
         });
       }
   });
