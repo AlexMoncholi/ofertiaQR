@@ -17,7 +17,7 @@
         Alejandro Moncholí
     </author>
 
-  <content src="camera.html" />
+  <content src="index.html" />
   <platform name="android">
       <preference name="Fullscreen" value="false" />
       <preference name="Orientation" value="portrait" />
