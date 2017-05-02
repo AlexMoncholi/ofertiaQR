@@ -39,7 +39,7 @@
             <section id="main-qr">
                 <header>Bienvenido!</header>
                 <p>Welcome message</p>
-                <div id="qr-reader"></div>
+                <div id="qr-reader" style="width: 640px; height: 480px"></div>
                 
             </section>
             <section id="create-qr">
@@ -64,24 +64,47 @@
     </div>
     <script src="js/main.js"></script>
     <script>
+        var cam = false;
+        navigator.mediaDevices.enumerateDevices()
+.then(function(devices) {
+  devices.forEach(function(device) {
+      if (device.kind === "videoinput" && !cam){
         Quagga.init({
             inputStream : {
-              name : "Live",
-              type : "LiveStream",
-              target: document.querySelector('#qr-reader')    // Or '#yourElement' (optional)
+                name : "Live",
+                type : "LiveStream",
+                target: document.querySelector('#qr-reader')    // Or '#yourElement' (optional)
+            },
+            constraints: {
+                width: 640,
+                height: 480,
+                facingMode: "environment",
+                deviceId: device.deviceId
+            },
+            area: { // defines rectangle of the detection/localization area
+                top: "0%",    // top offset
+                right: "0%",  // right offset
+                left: "0%",   // left offset
+                bottom: "0%"  // bottom offset
             },
             decoder : {
-              readers : ["code_128_reader"]
+                readers : ["code_128_reader"]
             }
-          }, function(err) {
-              if (err) {
-                  console.log(err);
-                  alert(err)
-                  return
-              }
-              console.log("Initialization finished. Ready to start");
-              Quagga.start();
+            }, function(err) {
+            if (err) {
+                console.log(err);
+                alert(err)
+                return
+            }
+            console.log("Initialization finished. Ready to start");
+            Quagga.start();
+            cam = false;
         });
+      }
+  });
+})
+        
+        
     </script>
 </body>
 </html>
