@@ -64,11 +64,6 @@
     </div>
     <script src="js/main.js"></script>
     <script>
-        var cam = false;
-        navigator.mediaDevices.enumerateDevices()
-.then(function(devices) {
-  devices.forEach(function(device) {
-      if (device.kind === "videoinput" && !cam){
         Quagga.init({
             inputStream : {
                 name : "Live",
@@ -77,8 +72,7 @@
                 constraints: {
                     width: 640,
                     height: 480,
-                    facingMode: "environment",
-                    deviceId: device.deviceId
+                    facingMode: "environment"
                 },
                 area: { // defines rectangle of the detection/localization area
                     top: "0%",    // top offset
@@ -100,12 +94,7 @@
             console.log("Initialization finished. Ready to start");
             Quagga.start();
             cam = false;
-        });
-      }
-  });
-})
-        
-        
+        });        
     </script>
 </body>
 </html>
